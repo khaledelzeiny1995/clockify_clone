@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('clockify/' , clockifyView),
     path('addproject/' , addproject),
-    ath('deleteproject/<int:todo_id>/' , deleteproject),
+    path('deleteproject/<int:project_id>/' , deleteproject),
 
 
 ]

@@ -15,5 +15,5 @@ def addproject(request):
 
 def deleteproject(request , project_id):
          delete_project = clockifyItem.objects.get(id = project_id)
-         new_project.save()
+         delete_project.delete()
          return HttpResponseRedirect('/clockify/')         
