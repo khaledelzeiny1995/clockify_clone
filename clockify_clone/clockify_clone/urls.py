@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from clockify.views import clockifyView
+from clockify.views import addproject
+from clockify.views import deleteproject
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('clockify' , clockifyView)
+    path('clockify/' , clockifyView),
+    path('addproject/' , addproject),
+    ath('deleteproject/<int:todo_id>/' , deleteproject),
+
+
 ]

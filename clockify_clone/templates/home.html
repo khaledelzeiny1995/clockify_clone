@@ -1,1 +1,62 @@
-<h1> Clockify-clone</h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static  '/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+</head>
+<body>
+<!-- this is the side bar -->
+<div class="sidenav">
+
+<p class ="title-sidenav"> clockify_clone</p>
+
+<div class="sidenav-items">
+<ul>
+<a href="#Time">TIME TRACKER</a>
+<a href="#Dashboard">DASHBOARD</a>
+</ul>
+</div>
+
+<!-- end of the sidebar nav-->
+</div>
+
+<section class="section-01" id="#Time">
+
+<!-- add project -->
+<div class = "add-project">
+
+<form action = "/addproject/" method = "post"> {% csrf_token %}
+<input type="text" value = "add project" name ="content"/>
+<input type="submit" value = "Add project"/>
+</form>
+</div>
+
+
+<!-- list of projects-->
+<div class="list-style">
+<ul>
+{% for eachproject in all_projects %}
+
+<li> {{eachproject.content}}
+<form action = "/addproject/" method = "post"> {% csrf_token %}
+<input type="text" value = "add project" name ="content"/>
+<input type="submit" value = "Delete"/>
+</form>
+</li>
+{% endfor %}
+</ul>
+</div>
+
+</section>
+
+
+<section class="section-01 section-02" id="#Dashboard">
+
+
+
+</section>
+
+</body>
+</html>
