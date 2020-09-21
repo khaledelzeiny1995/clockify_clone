@@ -5,7 +5,7 @@
 
 ### `pipenv shell` 
 
-### have to run the django enviroment inside the clockify app folder
+### have to run the django enviroment inside the clockify_clone app folder
 
 ## To run clockify django app :.
 
