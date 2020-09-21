@@ -1,16 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-   <head>
-      <link rel="stylesheet" href="{% static  '/css/home.css' %}">
-      <!-- js file -->
-      <script src="{% static '/js/d3.min.js' %}"></script>
-        {% comment %} <div class = "chart-style"> <svg class="bar-chart"> </svg> </div> {% endcomment %}
-      <script src="{% static '/js/stopwatch.js' %}"></script>
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-   </head>
    <body>
-  
       <!-- this is the side bar -->
       <div class="sidenav">
          <p class ="title-sidenav"> clockify_clone</p>
@@ -22,78 +13,69 @@
          </div>
          <!-- end of the sidebar nav-->
       </div>
-
-
       <section class="section-01" id="#Time">
          <!-- add project -->
+         <p class ="Timetracker-title" >Time Tracker</p>
 
          <div class = "add-project">
-
             <form action = "/addproject/" method = "post"> {% csrf_token %}
-
                <input  class="projectinput" type="text" value = "add project" name ="content"/>
                <input  class="projectinputsumbit" type="submit" value = "Add project"/>
             </form>
-
             <!-- this the stop watch -->
-
             <div class ="stopwatch-counter">
-             
-            
-             <div class = "stopwatch-buttons"> <button onclick="start()">Start</button>
-                   <button onclick="pause()">Pause</button>
-                   <button onclick="stop()">stop</button> 
-             </div>
-
-            <div  id = "stopwatch-text" class="stopwatch-text">00:00:00</div>
-
-             <ul class="laps"> </ul>
-            </div>            
+               <div class = "stopwatch-buttons"> 
+                  <button onclick="start()">Start</button>
+                  <button onclick="pause()">Pause</button>
+                  <button onclick="stop()">stop</button> 
+               </div>
+               <div id ="stopwatch-text" class="stopwatch-text">00:00:00</div>
+               <div>
+                  <p id = "laps" class="laps"> </p>
+               </div>
+            </div>
          </div>
          <!-- list of projects-->
-
-
-
          <div class="list-style">
             <ul>
                {% for eachproject in all_projects %}
-
                <li class = "added-projects">
-                <input  class=" added-projectinput" type="text" value = {{eachproject.content}}/>
+                  <p  class=" added-projectinput" > {{eachproject.content}} <p/>
                   <form action = "/deleteproject/{{eachproject.id}}/" method = "post"> {% csrf_token %}
                      <input class = "delete-project" type="submit" value = "Delete"/>
                   </form>
-
-                    {% comment %} <div class ="stopwatch-counter">
-              {% endcomment %}
-            
-             {% comment %} <div> <button onclick="start()">Start</button>
-                   <button onclick="pause()">Pause</button>
-                   <button onclick="stop()">stop</button> 
-             </div>
-
-            <div  id = "stopwatch-text" class="stopwatch-text">00:00:00</div>
-
-             <ul class="laps"> </ul> {% endcomment %}
-            {% comment %} </div> {% endcomment %}
-
-
+                  <div class ="stopwatch-counter-secound">
+                     <div class = "stopwatch-buttons"> 
+                        <button onclick="start()">Start</button>
+                        <button onclick="pause()">Pause</button>
+                        <button onclick="stop()">stop</button> 
+                     </div>
+                     <div id ="stopwatch-text" class="stopwatch-text">00:00:00</div>
+                     <div>
+                        <p id = "laps" class="laps"> </p>
+                     </div>
+                  </div>
                </li>
                {% endfor %}
             </ul>
          </div>
-
-        
       </section>
-
-
+   </body>
+   <head>
+      <link rel="stylesheet" href="{% static  '/css/home.css' %}">
+      <!-- js file -->
       <section class="section-01 section-02" id="#Dashboard">
 
-      <div class= "bar-chart-div">
-      </div>
+          <p class ="Dashboard-title" >Dashboard</p>
 
+         <div class= "bar-chart-div">
+            <script src="{% static '/js/d3.min.js' %}"></script>
+            <div class = "chart-style">
+               <svg class="bar-chart"> </svg>
+            </div>
+         </div>
       </section>
-
-     
-   </body>
+      <script src="{% static '/js/stopwatch.js' %}"></script>
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+   </head>
 </html>
