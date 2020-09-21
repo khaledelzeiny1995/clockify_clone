@@ -77,6 +77,61 @@ h1 {
     left: 550px;
 }
 
+.projectinput {
+    position: relative;
+    top: 40px;
+    left: 5%;
+    width: 20%;
+    color: #000000;
+}
+
+.projectinputsumbit {
+    position: relative;
+    top: 40px;
+    left: 8%;
+    border-style: none;
+    background-color: #000000;
+    color: #ffffff;
+    width: 10%;
+    height: 30px;
+}
+
+.added-projects {
+    position: relative;
+    height: 120px;
+    width: 60%;
+    background-color: #ffffff;
+    top: 100px;
+    left: 500px;
+    margin: 1%;
+    list-style: none;
+}
+
+.added-projectinput {
+    position: relative;
+    top: 40px;
+    left: 5%;
+    width: 20%;
+    color: #000000;
+}
+
+.delete-project {
+    position: relative;
+    top: 10px;
+    left: 30%;
+    border-style: none;
+    background-color: #000000;
+    color: #ffffff;
+    width: 10%;
+    height: 30px;
+}
+
+.stopwatch-counter {
+    position: relative;
+    left: 70%;
+    top: 15px;
+}
+
 
 /* section- 02 styling */
 
@@ -91,4 +146,19 @@ h1 {
     color: black;
     font-weight: 700;
     position: relative;
+}
+
+.bar-chart-div {
+    position: relative;
+    left: 50%;
+}
+
+.bar-chart {
+    background-color: #C7D9D9;
+}
+
+.chart-style {
+    position: relative;
+    top: 100%;
+    left: 50%;
 }
